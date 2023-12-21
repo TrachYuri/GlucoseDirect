@@ -88,18 +88,15 @@ private class AppleCalendarExportService {
     lazy var eventStore: EKEventStore = .init()
 
     func requestAccess(completionHandler: @escaping CalendarExportHandler) {
-//        if #available(iOS 17.0, *) {
-//            eventStore.requestFullAccessToEvents { granted, error in
-//                if granted, error == nil {
-//                    completionHandler(true)
-//                } else {
-//                    completionHandler(false)
-//                }
-//            }
-//        } else {
-      if #available(iOS 17.0, *) {
-        assertionFailure("it's ios 17. Uncomment above")
-      }
+        if #available(iOS 17.0, *) {
+            eventStore.requestFullAccessToEvents { granted, error in
+                if granted, error == nil {
+                    completionHandler(true)
+                } else {
+                    completionHandler(false)
+                }
+            }
+        } else {
             eventStore.requestAccess(to: EKEntityType.event, completion: { granted, error in
                 if granted, error == nil {
                     completionHandler(true)
@@ -107,7 +104,7 @@ private class AppleCalendarExportService {
                     completionHandler(false)
                 }
             })
-//        }
+        }
     }
 
     func clearGlucoseEvents() {
