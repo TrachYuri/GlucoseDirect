@@ -115,8 +115,8 @@ struct GlucoseView: View {
                 }
 
             case .systemSmall:
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [.white, .ui.gray]), startPoint: .top, endPoint: .bottom)
+//                ZStack {
+//                    LinearGradient(gradient: Gradient(colors: [.white, .ui.gray]), startPoint: .top, endPoint: .bottom)
 
                     VStack(spacing: 10) {
                         if let appIcon = UIImage(named: "AppIcon") {
@@ -158,7 +158,7 @@ struct GlucoseView: View {
                         .opacity(0.5)
                         .font(.footnote)
                     }
-                }
+//                }
 
             default:
                 Text("")
@@ -175,6 +175,7 @@ struct GlucoseWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: GlucoseUpdateProvider()) { entry in
             GlucoseView(entry: entry)
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
         }
         .supportedFamilies([.accessoryRectangular, .accessoryCircular, .systemSmall])
         .configurationDisplayName("Glucose widget")
@@ -188,29 +189,38 @@ struct GlucoseWidget_Previews: PreviewProvider {
     static var previews: some View {
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderLowGlucose, glucoseUnit: .mgdL))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderLowGlucose, glucoseUnit: .mgdL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderLowGlucose, glucoseUnit: .mmolL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderGlucose, glucoseUnit: .mgdL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderGlucose, glucoseUnit: .mmolL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderHighGlucose, glucoseUnit: .mgdL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderHighGlucose, glucoseUnit: .mmolL))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderHighGlucose, glucoseUnit: .mgdL))
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
 
         GlucoseView(entry: GlucoseEntry(date: Date(), glucose: placeholderHighGlucose, glucoseUnit: .mmolL))
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
     }
 }

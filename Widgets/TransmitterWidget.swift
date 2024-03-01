@@ -114,6 +114,7 @@ struct TransmitterWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: TransmitterUpdateProvider()) { entry in
             TransmitterView(entry: entry)
+            .widgetBackground(Color(uiColor: UIColor.systemBackground))
         }
         .supportedFamilies([.accessoryCircular])
         .configurationDisplayName("Transmitter battery widget")
