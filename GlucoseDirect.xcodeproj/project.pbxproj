@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		101B53852A3BC0210088B4BD /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 101B53842A3BC0210088B4BD /* GRDB */; };
 		107FA9CB2975C6780002A9F4 /* AdditionalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107FA9CA2975C6780002A9F4 /* AdditionalSettingsView.swift */; };
 		107FA9CD2975C6F90002A9F4 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107FA9CC2975C6F90002A9F4 /* Float.swift */; };
 		10B3B0CE2972D65F00B70CE4 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B0CD2972D65F00B70CE4 /* Alarm.swift */; };
@@ -20,6 +19,7 @@
 		6587CE4A29626070008518F4 /* InsulinDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587CE4929626070008518F4 /* InsulinDelivery.swift */; };
 		6587CE4C2962651B008518F4 /* InsulinDeliveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587CE4B2962651B008518F4 /* InsulinDeliveryStore.swift */; };
 		6587CE4D29626AD5008518F4 /* InsulinDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587CE4929626070008518F4 /* InsulinDelivery.swift */; };
+		DEE555102CEE02C000A95698 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DEE5550F2CEE02C000A95698 /* GRDB */; };
 		E2016FD9285BA80300079195 /* SensorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2016FD5285BA7C600079195 /* SensorWidget.swift */; };
 		E2016FDA285BA81700079195 /* GlucoseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2016FD7285BA7EE00079195 /* GlucoseWidget.swift */; };
 		E2016FDC285BA82600079195 /* TransmitterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2016FDB285BA82600079195 /* TransmitterWidget.swift */; };
@@ -447,7 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101B53852A3BC0210088B4BD /* GRDB in Frameworks */,
+				DEE555102CEE02C000A95698 /* GRDB in Frameworks */,
 				E251653E28D7BFE900922898 /* ActivityKit.framework in Frameworks */,
 				E27BBA8027AD7DDA00A6B8EE /* HealthKit.framework in Frameworks */,
 			);
@@ -928,7 +928,7 @@
 			);
 			name = GlucoseDirectApp;
 			packageProductDependencies = (
-				101B53842A3BC0210088B4BD /* GRDB */,
+				DEE5550F2CEE02C000A95698 /* GRDB */,
 			);
 			productName = GlucoseDirect;
 			productReference = E20B853A266F4A9800AA4224 /* GlucoseDirectApp.app */;
@@ -996,7 +996,7 @@
 			);
 			mainGroup = E20B8531266F4A9800AA4224;
 			packageReferences = (
-				101B53832A3BC0210088B4BD /* XCRemoteSwiftPackageReference "GRDB" */,
+				DE86BFB72CECC13A00EF35A5 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = E20B853B266F4A9800AA4224 /* Products */;
 			projectDirPath = "";
@@ -1603,20 +1603,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		101B53832A3BC0210088B4BD /* XCRemoteSwiftPackageReference "GRDB" */ = {
+		DE86BFB72CECC13A00EF35A5 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/groue/GRDB.swift";
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
 			requirement = {
-				kind = exactVersion;
-				version = 6.29.3;
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.29.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		101B53842A3BC0210088B4BD /* GRDB */ = {
+		DEE5550F2CEE02C000A95698 /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 101B53832A3BC0210088B4BD /* XCRemoteSwiftPackageReference "GRDB" */;
+			package = DE86BFB72CECC13A00EF35A5 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */
